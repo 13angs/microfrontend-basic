@@ -21,9 +21,9 @@ const devConfig = {
         new ModuleFederationPlugin({
             name: 'container',
             filename: 'remoteEntry.js',
-            // exposes: {
-
-            // }
+            remotes: {
+                checkout: 'checkout@http://localhost:3003/remoteEntry.js'
+            }
         }),
 
         new HtmlWebpackPlugin({

@@ -2,25 +2,20 @@
 import './App.css';
 import './index.css';
 import React from 'react'
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
+const Appbar = React.lazy(() => import('./components/appbar/appbar'));
+const CheckoutPage = React.lazy(() => import('./pages/checkout.page'));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <React.Suspense fallback={<div>loading...</div>}>
+        <Switch>
+          <Route path={"/checkouts"} component={CheckoutPage} />
+        </Switch>
+      </React.Suspense>
+    </BrowserRouter>
   );
 }
 
