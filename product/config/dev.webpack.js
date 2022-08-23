@@ -9,20 +9,20 @@ const webpack = require('webpack');
 const devConfig = {
     mode: 'development',
     output: {
-        publicPath: 'http://localhost:3003/',
+        publicPath: 'http://localhost:3002/',
         path: path.resolve(__dirname, 'dist')
     },
     devServer: {
-        port: 3003,
+        port: 3002,
         host: 'localhost',
         historyApiFallback: true
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'checkout',
+            name: 'product',
             filename: 'remoteEntry.js',
             exposes: {
-                './CheckoutApp': './src/bootstrap'
+                './productApp': './src/bootstrap'
             },
             shared: packageJson.dependencies
         }),

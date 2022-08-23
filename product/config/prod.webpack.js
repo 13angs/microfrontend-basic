@@ -12,7 +12,7 @@ const devConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'checkout',
+      name: 'product',
       filename: 'remoteEntry.js',
       exposes: {
         './CheckoutApp': './src/bootstrap'
