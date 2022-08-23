@@ -22,7 +22,8 @@ const devConfig = {
             name: 'container',
             filename: 'remoteEntry.js',
             remotes: {
-                checkout: 'checkout@http://localhost:3003/remoteEntry.js'
+                checkout: 'checkout@http://localhost:3003/remoteEntry.js',
+                home: 'home@http://localhost:3001/remoteEntry.js'
             }
         }),
 
