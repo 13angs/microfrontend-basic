@@ -14,7 +14,7 @@ function ProductApp(){
     return <div ref={appRef}/>
 }
 
-export default function ProductApp(){
+export default function ProductPage(){
     return (
         <div>
             <Appbar/>
