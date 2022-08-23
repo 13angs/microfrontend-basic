@@ -22,7 +22,7 @@ const devConfig = {
             name: 'product',
             filename: 'remoteEntry.js',
             exposes: {
-                './productApp': './src/bootstrap'
+                './ProductApp': './src/bootstrap'
             },
             shared: packageJson.dependencies
         }),
