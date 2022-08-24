@@ -1,6 +1,5 @@
 import React from 'react';
 import {mount} from 'checkout/CheckoutApp';
-import {Appbar, Footer} from '../components/share';
 
 function CheckoutApp(){
     const appRef = React.useRef(null);
@@ -17,9 +16,9 @@ function CheckoutApp(){
 export default function CheckoutPage(){
     return (
         <div>
-            <Appbar/>
+            {/* <Appbar/> */}
             <CheckoutApp/>
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     );
 }

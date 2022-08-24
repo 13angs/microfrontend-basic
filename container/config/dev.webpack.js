@@ -24,7 +24,10 @@ const devConfig = {
             remotes: {
                 checkout: 'checkout@http://localhost:3003/remoteEntry.js',
                 home: 'home@http://localhost:3001/remoteEntry.js'
-            }
+            },
+            exposes: {
+                './Components': './src/share/components'
+            },
         }),
 
         new HtmlWebpackPlugin({
