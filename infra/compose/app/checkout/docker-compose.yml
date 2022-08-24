@@ -1,0 +1,17 @@
+version: 'version'
+
+services:
+  mfb-checkout:
+    image: 13angs/mfb-checkout:latest
+    build: 
+      context: ../../../../checkout
+      dockerfile: Dockerfile
+    ports:
+      - "4000:80"
+    networks:
+      - mfb-network
+
+networks:
+  mfb-network:
+    name: mfb-network
+    external: true
