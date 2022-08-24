@@ -42,10 +42,10 @@ export default function Appbar() {
 
     return (
         <nav className="navbar">
-            <AppBar position="static">
+            {/* <AppBar position="static" backgroundColor="#DC7594"> */}
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
-                        <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                        <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: 'white' }} />
                         <Typography
                             variant="h6"
                             noWrap
@@ -57,7 +57,7 @@ export default function Appbar() {
                                 fontFamily: 'monospace',
                                 fontWeight: 700,
                                 letterSpacing: '.3rem',
-                                color: 'inherit',
+                                color: 'white',
                                 textDecoration: 'none',
                             }}
                         >
@@ -93,14 +93,18 @@ export default function Appbar() {
                                     display: { xs: 'block', md: 'none' },
                                 }}
                             >
-                                {pages.map((page) => (
-                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                        <Typography textAlign="center">{page}</Typography>
-                                    </MenuItem>
-                                ))}
+                                <MenuItem onClick={() => history.push('/home')}>
+                                    <Typography textAlign="center">Home</Typography>
+                                </MenuItem>
+                                <MenuItem onClick={() => history.push('/products')}>
+                                    <Typography textAlign="center">PRODUCTS</Typography>
+                                </MenuItem>
+                                <MenuItem onClick={() => history.push('/checkouts')}>
+                                    <Typography textAlign="center">CHECKOUTS</Typography>
+                                </MenuItem>
                             </Menu>
                         </Box>
-                        <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+                        <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 , color: 'white'}} />
                         <Typography
                             variant="h5"
                             noWrap
@@ -113,7 +117,7 @@ export default function Appbar() {
                                 fontFamily: 'monospace',
                                 fontWeight: 700,
                                 letterSpacing: '.3rem',
-                                color: 'inherit',
+                                color: 'white',
                                 textDecoration: 'none',
                             }}
                         >
@@ -142,7 +146,7 @@ export default function Appbar() {
                         <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Open settings">
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                    <Avatar alt="Remy Sharp" src="https://www.w3schools.com/howto/img_avatar.png" />
                                 </IconButton>
                             </Tooltip>
                             <Menu
@@ -170,7 +174,6 @@ export default function Appbar() {
                         </Box>
                     </Toolbar>
                 </Container>
-            </AppBar>
         </nav>
     )
 }

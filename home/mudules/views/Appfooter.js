@@ -5,6 +5,8 @@ import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
 import TextField from '../components/TextField';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
 
 function Copyright() {
   return (
@@ -23,11 +25,13 @@ const iconStyle = {
   height: 48,
   display: 'flex',
   justifyContent: 'center',
+  color: 'white',
+  borderRadius:'12px',
   alignItems: 'center',
-  backgroundColor: 'warning.main',
+  backgroundColor: '#DC7594',
   mr: 1,
   '&:hover': {
-    bgcolor: 'warning.dark',
+    bgcolor: '#F9E0E3',
   },
 };
 
@@ -59,18 +63,8 @@ export default function AppFooter() {
               sx={{ height: 120 }}
             >
               <Grid item sx={{ display: 'flex' }}>
-                <Box component="a" href="https://mui.com/" sx={iconStyle}>
-                  <img
-                    src="/static/themes/onepirate/appFooterFacebook.png"
-                    alt="Facebook"
-                  />
-                </Box>
-                <Box component="a" href="https://twitter.com/MUI_hq" sx={iconStyle}>
-                  <img
-                    src="/static/themes/onepirate/appFooterTwitter.png"
-                    alt="Twitter"
-                  />
-                </Box>
+                <Box component="a" href="https://mui.com/" sx={iconStyle}><FacebookIcon/></Box>
+                <Box component="a" href="https://twitter.com/MUI_hq" sx={iconStyle}><TwitterIcon/></Box>
               </Grid>
               <Grid item>
                 <Copyright />
