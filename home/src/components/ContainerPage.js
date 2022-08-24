@@ -1,22 +1,28 @@
 import React from "react";
 import {containerMount} from 'container/Components';
 
-function ContainerApp(){
+function ContainerApp({value}){
     const appRef = React.useRef(null);
-
-    React.useEffect(() => {
-        if(appRef.current && containerMount)
-        {
-            containerMount(appRef.current);
-        }
-    })
-    return <div ref={appRef}/>
+// console.log(containerMount)
+React.useEffect(() => {
+    if(appRef.current && containerMount)
+    {
+        containerMount(appRef.current, value);
+    }
+})
+return <div ref={appRef}/>
 }
 
-export default function ContainerPage(){
+export default function ContainerPage(){ 
+    const [open, setOpen] = React.useState(false);
+    const handleClick = () => {
+        setOpen(true)
+    }
+    
     return (
         <div>
-            <ContainerApp/>
+            <button onClick={handleClick}>OPEN DIALOG</button>
+            <ContainerApp value={open} />
         </div>
     );
 }
