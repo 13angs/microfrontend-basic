@@ -23,7 +23,6 @@ const devConfig = {
             filename: 'remoteEntry.js',
             remotes: {
                 checkout: 'checkout@http://localhost:3003/remoteEntry.js',
-                product: 'product@http://localhost:3002/remoteEntry.js'
             }
         }),
 

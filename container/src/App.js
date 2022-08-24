@@ -4,9 +4,7 @@ import './index.css';
 import React from 'react'
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
-const Appbar = React.lazy(() => import('./components/appbar/appbar'));
 const CheckoutPage = React.lazy(() => import('./pages/checkout.page'));
-const ProductPage = React.lazy(() => import('./pages/product.page'));
 
 function App() {
   return (
@@ -14,7 +12,6 @@ function App() {
       <React.Suspense fallback={<div>loading...</div>}>
         <Switch>
           <Route path={"/checkouts"} component={CheckoutPage} />
-          <Route path={"/product"} component={ProductPage} />
         </Switch>
       </React.Suspense>
     </BrowserRouter>
