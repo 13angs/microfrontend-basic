@@ -4,14 +4,15 @@ import './index.css';
 import React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import ContainerPage from './component/container.page';
 
 function App({value}) {
-  console.log(value)
   return (
     <div>
       <header className="App-header">
         Products
         <StandardImageList/>
+        <ContainerPage/>
       </header>
     </div>
   );

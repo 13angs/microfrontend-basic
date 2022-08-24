@@ -17,9 +17,7 @@ function ProductApp({value}){
 export default function ProductPage(){
     return (
         <div>
-            <Appbar/>
             <ProductApp value="a"/>
-            <Footer/>
         </div>
     );
 }
