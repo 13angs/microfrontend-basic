@@ -17,9 +17,9 @@ function CheckoutApp(){
 export default function CheckoutPage(){
     return (
         <div>
-            <Appbar/>
+            {/* <Appbar/> */}
             <CheckoutApp/>
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     );
 }

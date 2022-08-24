@@ -1,5 +1,6 @@
 .navbar{
-    height: 50px;
-    background-color: aquamarine;
+    height: 70px;
+    background-color: rgb(206, 189, 74);
     width: 100%;
+    padding: auto;
 }

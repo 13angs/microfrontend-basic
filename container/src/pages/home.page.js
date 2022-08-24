@@ -17,9 +17,9 @@ function HomeApp(){
 export default function HomePage(){
     return (
         <div>
-            <Appbar/>
+            {/* <Appbar/> */}
             <HomeApp/>
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     );
 }
