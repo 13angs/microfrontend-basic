@@ -6,13 +6,14 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 const Appbar = React.lazy(() => import('./components/appbar/appbar'));
 const CheckoutPage = React.lazy(() => import('./pages/checkout.page'));
-
+const HomePage = React.lazy(() => import('./pages/home.page'))
 function App() {
   return (
     <BrowserRouter>
       <React.Suspense fallback={<div>loading...</div>}>
         <Switch>
           <Route path={"/checkouts"} component={CheckoutPage} />
+          <Route path={"/home"} component={HomePage} />
         </Switch>
       </React.Suspense>
     </BrowserRouter>
