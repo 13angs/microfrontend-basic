@@ -10,7 +10,6 @@ import LinearProgress from '@mui/material/LinearProgress';
 const Appbars = React.lazy(() => import('./components/appbar/appbar'));
 const CheckoutPage = React.lazy(() => import('./pages/checkout.page'));
 const HomePage = React.lazy(() => import('./pages/home.page'))
-const ContainerPage = React.lazy(() => import('./pages/container.page'))
 // const BackdropPage = React.lazy(() => import('./pages/backdrop.page'))
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
             <LinearProgress />
           </Box>}>
           <Switch>
-            <Route exact path={"/"} component={ContainerPage} />
             <Route path={"/checkouts"} component={CheckoutPage} />
             <Route path={"/home"} component={HomePage} />
           </Switch>
