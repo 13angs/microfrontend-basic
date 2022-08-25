@@ -13,7 +13,26 @@ module.exports = {
                         plugins: ['@babel/plugin-transform-runtime']
                     }
                 }
-            }
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+            {
+                test: /\.(gif|png|jpe?g)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'assets/images/'
+                        }
+                    }
+                ]
+            },
         ]
     },
     plugins: [
