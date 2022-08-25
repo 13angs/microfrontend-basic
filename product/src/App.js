@@ -1,12 +1,24 @@
 // import logo from './logo.svg';
 import './App.css';
 import './index.css';
-import React from 'react';
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ContainerPage from './component/container.page';
 
-function App({value}) {
+function App({open, setOpen}) {
+
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div>
       <header className="App-header">
@@ -14,6 +26,27 @@ function App({value}) {
         <StandardImageList/>
         <ContainerPage/>
       </header>
+      <div>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Use Google's location service?"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Let Google help apps determine location. This means sending anonymous
+            location data to Google, even when no apps are running.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Disagree</Button>
+        </DialogActions>
+      </Dialog>
+    </div>
     </div>
   );
 }

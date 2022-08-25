@@ -1,23 +1,30 @@
 import React from 'react';
 import {mount} from 'product/ProductApp';
-import {Appbar, Footer} from '../components/share';
+import Button from '@mui/material/Button';
 
-function ProductApp({value}){
+function ProductApp({open, setOpen}){
     const appRef = React.useRef(null);
 
     React.useEffect(() => {
         if(appRef.current && mount)
         {
-            mount(appRef.current, value);
+            mount(appRef.current, open, setOpen);
         }
     })
     return <div ref={appRef}/>
 }
 
 export default function ProductPage(){
+    const [open, setOpen] = React.useState(false);
+
+    const handleClick = () => {
+        setOpen(true)
+    }
+
     return (
         <div>
-            <ProductApp value="a"/>
+            <Button variant="contained" onClick={handleClick}>open dialog</Button>
+            <ProductApp open={open} setOpen={setOpen}/>
         </div>
     );
 }
