@@ -22,7 +22,7 @@ const devConfig = {
             name: 'checkout',
             filename: 'remoteEntry.js',
             exposes: {
-                './CheckoutApp': './src/bootstrap'
+                './CheckoutApp': './src/bootstrap',
             },
             shared: packageJson.dependencies
         }),

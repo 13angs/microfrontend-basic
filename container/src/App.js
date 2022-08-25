@@ -3,7 +3,6 @@ import './App.css';
 import './index.css';
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import { Appbar, Footer } from './components/share';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 

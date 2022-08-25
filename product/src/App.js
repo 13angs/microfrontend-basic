@@ -10,7 +10,6 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import ContainerPage from './component/container.page';
 
 function App({open, setOpen}) {
 
@@ -24,7 +23,6 @@ function App({open, setOpen}) {
       <header className="App-header">
         Products
         <StandardImageList/>
-        <ContainerPage/>
       </header>
       <div>
       <Dialog
