@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 
-const Appbars = React.lazy(() => import('./components/appbar/appbar'));
+const Appbars = React.lazy(() => import('@mfb/common/appbar/appbar'));
 const CheckoutPage = React.lazy(() => import('./pages/checkout.page'));
 const HomePage = React.lazy(() => import('./pages/home.page'));
 const ProductPage = React.lazy(() => import('./pages/product.page'));
@@ -26,6 +26,7 @@ function App() {
             <Route path={"/checkouts"} component={CheckoutPage} />
             <Route path={"/home"} component={HomePage} />
             <Route path={"/product"} component={ProductPage} />
+            <Route path={"/"} component={HomePage} />
           </Switch>
         </React.Suspense>
       </BrowserRouter>

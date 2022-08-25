@@ -1,5 +1,6 @@
 import React from 'react';
 import {mount} from 'product/ProductApp';
+import BasicFooter from '@mfb/common/footer/basicFooter';
 
 function ProductApp({open, setOpen}){
     const appRef = React.useRef(null);
@@ -14,11 +15,10 @@ function ProductApp({open, setOpen}){
 }
 
 export default function ProductPage(){
-    const [open, setOpen] = React.useState(false);
-
     return (
         <div>
-            <ProductApp open={open} setOpen={setOpen}/>
+            <ProductApp/>
+            <BasicFooter/>
         </div>
     );
 }

@@ -2,7 +2,6 @@
 import './App.css';
 import './index.css';
 import React from 'react';
-import AppFooter from '../mudules/views/Appfooter';
 import ProductSmokingHero from '../mudules/views/ProductSmokingHero';
 import ProductCTA from '../mudules/views/ProductCTA';
 
@@ -12,7 +11,6 @@ function App() {
     <React.Fragment>
       <ProductCTA />
       <ProductSmokingHero />
-      <AppFooter />
     </React.Fragment>
   );
 }

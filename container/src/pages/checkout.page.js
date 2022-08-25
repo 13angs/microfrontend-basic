@@ -1,5 +1,6 @@
 import React from 'react';
 import {mount} from 'checkout/CheckoutApp';
+import BasicFooter from '@mfb/common/footer/basicFooter';
 
 function CheckoutApp(){
     const appRef = React.useRef(null);
@@ -18,7 +19,7 @@ export default function CheckoutPage(){
         <div>
             {/* <Appbar/> */}
             <CheckoutApp/>
-            {/* <Footer/> */}
+            <BasicFooter/>
         </div>
     );
 }
