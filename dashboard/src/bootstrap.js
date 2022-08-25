@@ -8,7 +8,7 @@ const mount = (element, open, setOpen) => {
 }
 
 if(process.env.NODE_ENV === 'development'){
-  const devRoot = document.getElementById('bashbord-id')
+  const devRoot = document.getElementById('bashboard-id')
 
   if(devRoot){
     mount(devRoot);

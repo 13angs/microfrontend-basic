@@ -27,6 +27,7 @@ function App() {
             <Route path={"/checkouts"} component={CheckoutPage} />
             <Route path={"/home"} component={HomePage} />
             <Route path={"/product"} component={ProductPage} />
+            <Route path={"/dashboard"} component={ProductPage} />
           </Switch>
         </React.Suspense>
       </BrowserRouter>

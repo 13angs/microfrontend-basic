@@ -1,15 +1,20 @@
 import './App.css';
 import './index.css';
-import * as React from 'react';
+import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+const DashboardPage = React.lazy(() => import('./page/bashboard.page'));
 
 function App() {
 
   return (
-    <div>
-      <header className="App-header">
-        Bashboard
-      </header>
-    </div>
+    <React.Fragment>
+    <BrowserRouter>
+        <Switch>
+          <Route path={"/bashboard"} component={DashboardPage} />
+        </Switch>
+    </BrowserRouter>
+  </React.Fragment>
   );
 }
 
