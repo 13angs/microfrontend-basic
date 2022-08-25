@@ -11,6 +11,7 @@ const Appbars = React.lazy(() => import('./components/appbar/appbar'));
 const CheckoutPage = React.lazy(() => import('./pages/checkout.page'));
 const HomePage = React.lazy(() => import('./pages/home.page'));
 const ProductPage = React.lazy(() => import('./pages/product.page'));
+const ProfilePage = React.lazy(() => import('./pages/profile.page'));
 
 // const BackdropPage = React.lazy(() => import('./pages/backdrop.page'))
 
@@ -27,6 +28,7 @@ function App() {
             <Route path={"/checkouts"} component={CheckoutPage} />
             <Route path={"/home"} component={HomePage} />
             <Route path={"/product"} component={ProductPage} />
+            <Route path={"/profile"} component={ProfilePage} />
           </Switch>
         </React.Suspense>
       </BrowserRouter>

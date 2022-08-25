@@ -2,7 +2,7 @@ const {merge} = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const commonConfig = require('./common.webpack');
-// const packageJson = require('../package.json');
+const packageJson = require('../package.json');
 const path = require('path');
 const webpack = require('webpack');
 
@@ -21,9 +21,10 @@ const devConfig = {
         new ModuleFederationPlugin({
             name: 'profile',
             filename: 'remoteEntry.js',
-            // exposes: {
-
-            // }
+            exposes: {
+                './ProfileApp': './src/bootstrap'
+            },
+            shared: packageJson.dependencies
         }),
 
         new HtmlWebpackPlugin({

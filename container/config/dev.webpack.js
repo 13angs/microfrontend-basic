@@ -24,7 +24,8 @@ const devConfig = {
             remotes: {
                 checkout: 'checkout@http://localhost:3003/remoteEntry.js',
                 home: 'home@http://localhost:3001/remoteEntry.js',
-                product: 'product@http://localhost:3002/remoteEntry.js'
+                product: 'product@http://localhost:3002/remoteEntry.js',
+                profile: 'profile@http://localhost:3004/remoteEntry.js',
             },
             exposes: {
                 './Components': './src/share/components'
