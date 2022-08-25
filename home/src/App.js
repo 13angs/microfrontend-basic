@@ -2,9 +2,9 @@
 import './App.css';
 import './index.css';
 import React from 'react';
-import AppFooter from '../mudules/views/Appfooter';
-import ProductSmokingHero from '../mudules/views/ProductSmokingHero';
-import ProductCTA from '../mudules/views/ProductCTA';
+import AppFooter from './pages/appfooter.page';
+import ProductSmokingHero from './pages/productSmokingHero.page';
+import ProductCTA from './pages/productCTA.page';
 import ContainerPage from './components/ContainerPage';
 
 // const ContainerPage = React.lazy(() => import('../pages/container.page'))
