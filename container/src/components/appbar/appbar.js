@@ -102,6 +102,9 @@ export default function Appbar() {
                                 <MenuItem onClick={() => history.push('/checkouts')}>
                                     <Typography textAlign="center">CHECKOUTS</Typography>
                                 </MenuItem>
+                                <MenuItem onClick={() => history.push('/dashboard')}>
+                                    <Typography textAlign="center">BASHBOARD</Typography>
+                                </MenuItem>
                             </Menu>
                         </Box>
                         <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 , color: 'white'}} />

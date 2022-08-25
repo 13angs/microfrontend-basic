@@ -11,6 +11,8 @@ const Appbars = React.lazy(() => import('./components/appbar/appbar'));
 const CheckoutPage = React.lazy(() => import('./pages/checkout.page'));
 const HomePage = React.lazy(() => import('./pages/home.page'));
 const ProductPage = React.lazy(() => import('./pages/product.page'));
+const DashboardPage = React.lazy(() => import('./pages/dashboard.page'));
+const DashboardOrder = React.lazy(()=> import('./pages/dashboard/order.dashboard'));
 
 // const BackdropPage = React.lazy(() => import('./pages/backdrop.page'))
 
@@ -27,7 +29,8 @@ function App() {
             <Route path={"/checkouts"} component={CheckoutPage} />
             <Route path={"/home"} component={HomePage} />
             <Route path={"/product"} component={ProductPage} />
-            <Route path={"/dashboard"} component={ProductPage} />
+            <Route exact path={"/dashboard/order"} component={DashboardOrder} />
+            <Route path={"/dashboard"} component={DashboardPage} />
           </Switch>
         </React.Suspense>
       </BrowserRouter>

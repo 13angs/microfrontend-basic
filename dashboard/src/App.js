@@ -2,8 +2,9 @@ import './App.css';
 import './index.css';
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Order } from './page/order.page';
 
-const DashboardPage = React.lazy(() => import('./page/bashboard.page'));
+const DashboardPage = React.lazy(() => import('./page/dashboard.page'));
 
 function App() {
 
@@ -11,7 +12,8 @@ function App() {
     <React.Fragment>
     <BrowserRouter>
         <Switch>
-          <Route path={"/bashboard"} component={DashboardPage} />
+          <Route exact path={"/dashboard/order"} component={Order} />
+          <Route path={"/dashboard"} component={DashboardPage} />
         </Switch>
     </BrowserRouter>
   </React.Fragment>
