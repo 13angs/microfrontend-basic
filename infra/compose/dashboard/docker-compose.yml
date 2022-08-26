@@ -1,0 +1,22 @@
+version: 'version'
+
+services:
+  mfb-dashboard:
+    image: 13angs/mfb-dashboard:latest
+    build: 
+      context: ../../../
+      dockerfile: ./dashboard/Dockerfile
+      args:
+        - "DASHBOARD_HOST=${DASHBOARD_HOST}"
+    container_name: msb-dashboard
+    ports:
+      - target: 80
+        published: ${DASHBOARD_HOST_PORT}
+
+    networks:
+      - mfb-network
+
+networks:
+  mfb-network:
+    name: mfb-network
+    external: true

@@ -1,0 +1,25 @@
+version: 'version'
+
+services:
+  mfb-container:
+    image: 13angs/mfb-container:latest
+    build: 
+      context: ../../../
+      dockerfile: ./container/Dockerfile
+      args:
+        - "HOME_HOST=${HOME_HOST}"
+        - "PRODUCT_HOST=${PRODUCT_HOST}"
+        - "CHECKOUT_HOST=${CHECKOUT_HOST}"
+        - "PROFILE_HOST=${PROFILE_HOST}"
+        - "DASHBOARD_HOST=${DASHBOARD_HOST}"
+    container_name: msb-container
+    ports:
+      - target: 80
+        published: ${HOST_PORT}
+    networks:
+      - mfb-network
+
+networks:
+  mfb-network:
+    name: mfb-network
+    external: true

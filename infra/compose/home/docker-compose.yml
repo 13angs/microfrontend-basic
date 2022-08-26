@@ -1,0 +1,22 @@
+version: 'version'
+
+services:
+  mfb-home:
+    image: 13angs/mfb-home:latest
+    build: 
+      context: ../../../
+      dockerfile: ./home/Dockerfile
+      args:
+        - "HOME_HOST=${HOME_HOST}"
+    container_name: msb-home
+    ports:
+      - target: 80
+        published: ${HOME_HOST_PORT}
+
+    networks:
+      - mfb-network
+
+networks:
+  mfb-network:
+    name: mfb-network
+    external: true

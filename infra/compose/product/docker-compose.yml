@@ -1,0 +1,22 @@
+version: 'version'
+
+services:
+  mfb-product:
+    image: 13angs/mfb-product:latest
+    build: 
+      context: ../../../
+      dockerfile: ./product/Dockerfile
+      args:
+        - "PRODUCT_HOST=${PRODUCT_HOST}"
+
+    container_name: msb-product
+    ports:
+      - target: 80
+        published: ${PRODUCT_HOST_PORT}
+    networks:
+      - mfb-network
+
+networks:
+  mfb-network:
+    name: mfb-network
+    external: true
