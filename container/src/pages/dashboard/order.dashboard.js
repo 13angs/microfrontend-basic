@@ -1,7 +1,8 @@
 import React from 'react';
 import {mountOrder} from 'dashboard/Dashboard/Order';
+import BasicFooter from '@mfb/common/footer/basicFooter';
 
-function DashboardOrder(){
+function DashboardApp(){
     const ref = React.useRef(null);
 
     React.useEffect(() => {
@@ -14,4 +15,11 @@ function DashboardOrder(){
     return <div ref={ref}></div>
 }
 
-export default DashboardOrder;
+export default function DashboardOrder(){
+    return (
+        <>
+            <DashboardApp/>
+            <BasicFooter/>
+        </>
+    )
+}

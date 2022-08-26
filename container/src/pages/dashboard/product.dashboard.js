@@ -1,7 +1,8 @@
 import React from 'react';
 import {mountProduct} from 'dashboard/Dashboard/Product';
+import BasicFooter from '@mfb/common/footer/basicFooter';
 
-function DashboardProduct(){
+function DashboardApp(){
     const ref = React.useRef(null);
 
     React.useEffect(() => {
@@ -14,4 +15,12 @@ function DashboardProduct(){
     return <div ref={ref}></div>
 }
 
-export default DashboardProduct;
+
+export default function DashboardProduct(){
+    return(
+        <>
+            <DashboardApp/>
+            <BasicFooter/>
+        </>
+    )
+}

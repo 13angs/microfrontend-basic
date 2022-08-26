@@ -25,9 +25,6 @@ const devConfig = {
                 './HomeApp': './src/bootstrap'
             },
             shared: packageJson.dependencies,
-            remotes: {
-                container: 'container@http://localhost:3000/remoteEntry.js',
-            },
         }),
 
         new HtmlWebpackPlugin({

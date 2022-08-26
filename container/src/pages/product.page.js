@@ -1,6 +1,6 @@
 import React from 'react';
 import {mount} from 'product/ProductApp';
-import Button from '@mui/material/Button';
+import BasicFooter from '@mfb/common/footer/basicFooter';
 
 function ProductApp({open, setOpen}){
     const appRef = React.useRef(null);
@@ -15,16 +15,10 @@ function ProductApp({open, setOpen}){
 }
 
 export default function ProductPage(){
-    const [open, setOpen] = React.useState(false);
-
-    const handleClick = () => {
-        setOpen(true)
-    }
-
     return (
         <div>
-            <Button variant="contained" onClick={handleClick}>open dialog</Button>
-            <ProductApp open={open} setOpen={setOpen}/>
+            <ProductApp/>
+            <BasicFooter/>
         </div>
     );
 }

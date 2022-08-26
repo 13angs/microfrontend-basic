@@ -1,5 +1,6 @@
 import React from 'react';
 import {mount} from 'dashboard/BashboardApp';
+import BasicFooter from '@mfb/common/footer/basicFooter';
 
 function Dashboard(){
     const appRef = React.useRef(null);
@@ -18,6 +19,7 @@ export default function BashbordPage(){
     return (
         <div>
             <Dashboard/>
+            <BasicFooter/>
         </div>
     );
 }

@@ -3,18 +3,18 @@ import './App.css';
 import './index.css';
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import { Appbar, Footer } from './components/share';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 
-const Appbars = React.lazy(() => import('./components/appbar/appbar'));
+const Appbars = React.lazy(() => import('@mfb/common/appbar/appbar'));
 const CheckoutPage = React.lazy(() => import('./pages/checkout.page'));
 const HomePage = React.lazy(() => import('./pages/home.page'));
 const ProductPage = React.lazy(() => import('./pages/product.page'));
 const DashboardPage = React.lazy(() => import('./pages/dashboard.page'));
 const DashboardOrder = React.lazy(()=> import('./pages/dashboard/order.dashboard'));
 const DashboardProduct = React.lazy(()=> import('./pages/dashboard/product.dashboard'));
-
+const ProfileSettingPage = React.lazy(() => import('./pages/profile/profileSetting.page'))
+const ProfilePage = React.lazy(() => import('./pages/profile.page'))
 // const BackdropPage = React.lazy(() => import('./pages/backdrop.page'))
 
 function App() {
@@ -33,6 +33,9 @@ function App() {
             <Route exact path={"/dashboard/order"} component={DashboardOrder} />
             <Route exact path={"/dashboard/product"} component={DashboardProduct} />
             <Route path={"/dashboard"} component={DashboardPage} />
+            <Route exact path={"/profile/setting"} component={ProfileSettingPage} />
+            <Route path={"/profile"} component={ProfilePage} />
+            <Route path={"/"} component={HomePage} />
           </Switch>
         </React.Suspense>
       </BrowserRouter>
