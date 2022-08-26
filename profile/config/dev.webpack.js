@@ -22,7 +22,8 @@ const devConfig = {
             name: 'profile',
             filename: 'remoteEntry.js',
             exposes: {
-                './ProfileApp': './src/bootstrap'
+                './ProfileApp': './src/bootstrap',
+                './Profile/Setting' : './src/pages/settingProfile.page'
             },
             shared: packageJson.dependencies
         }),
