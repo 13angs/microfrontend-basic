@@ -1,8 +1,6 @@
 import('./appbar.css');
 import * as React from 'react';
-import Stack from '@mui/material/Stack';
 import { useHistory } from 'react-router-dom';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -61,7 +59,7 @@ export default function Appbar() {
                                 textDecoration: 'none',
                             }}
                         >
-                            CONTAINER
+                            MFB
                         </Typography>
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
