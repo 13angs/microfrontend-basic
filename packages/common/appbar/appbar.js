@@ -102,6 +102,9 @@ export default function Appbar() {
                             <MenuItem onClick={() => history.push('/profile')}>
                                 <Typography textAlign="center">PROFILE</Typography>
                             </MenuItem>
+                            <MenuItem onClick={() => history.push('/dashboard')}>
+                                <Typography textAlign="center">DASHBOARD</Typography>
+                            </MenuItem>
                         </Menu>
                     </Box>
                     <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, color: 'white' }} />
@@ -147,6 +150,12 @@ export default function Appbar() {
                             onClick={() => history.push('/profile')}
                         >
                             PROFILE
+                        </Button>
+                        <Button
+                            sx={{ my: 2, color: 'white', display: 'block' }}
+                            onClick={() => history.push('/dashboard')}
+                        >
+                            Dashboard
                         </Button>
                     </Box>
                     <Box sx={{ flexGrow: 0 }}>
