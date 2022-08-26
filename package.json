@@ -2,13 +2,7 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "packages/*",
-    "checkout",
-    "container",
-    "home",
-    "product",
-    "profile",
-    "dashboard"
+    "packages/*"
   ],
   "devDependencies": {
     "lerna": "^5.4.3"
