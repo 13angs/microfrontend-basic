@@ -2,8 +2,8 @@
 import './App.css';
 import './index.css';
 import React from 'react';
-import ProductSmokingHero from '../mudules/views/ProductSmokingHero';
-import ProductCTA from '../mudules/views/ProductCTA';
+import ProductSmokingHero from './pages/productSmokingHero.page';
+import ProductCTA from './pages/productCTA.page';
 
 function App() {
   // console.log(ContainerPage)

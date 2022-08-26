@@ -6,7 +6,8 @@
     "checkout",
     "container",
     "home",
-    "product"
+    "product",
+    "profile"
   ],
   "devDependencies": {
     "lerna": "^5.4.3"

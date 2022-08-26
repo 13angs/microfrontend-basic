@@ -10,7 +10,8 @@ const Appbars = React.lazy(() => import('@mfb/common/appbar/appbar'));
 const CheckoutPage = React.lazy(() => import('./pages/checkout.page'));
 const HomePage = React.lazy(() => import('./pages/home.page'));
 const ProductPage = React.lazy(() => import('./pages/product.page'));
-
+const ProfileSettingPage = React.lazy(() => import('./pages/profile/profileSetting.page'))
+const ProfilePage = React.lazy(() => import('./pages/profile.page'))
 // const BackdropPage = React.lazy(() => import('./pages/backdrop.page'))
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
             <Route path={"/checkouts"} component={CheckoutPage} />
             <Route path={"/home"} component={HomePage} />
             <Route path={"/product"} component={ProductPage} />
+            <Route exact path={"/profile/setting"} component={ProfileSettingPage} />
+            <Route path={"/profile"} component={ProfilePage} />
             <Route path={"/"} component={HomePage} />
           </Switch>
         </React.Suspense>
