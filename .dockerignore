@@ -1,0 +1,9 @@
+node_modules/
+.gitignore
+README.md
+infra/
+.github/
+.devcontainer
+home/
+product/
+dist/

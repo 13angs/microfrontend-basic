@@ -1,6 +1,6 @@
 import React from "react";
 import {mount} from 'home/HomeApp';
-import {Appbar, Footer} from '../components/share';
+import BasicFooter from '@mfb/common/footer/basicFooter';
 
 function HomeApp(){
     const appRef = React.useRef(null);
@@ -19,7 +19,7 @@ export default function HomePage(){
         <div>
             {/* <Appbar/> */}
             <HomeApp/>
-            {/* <Footer/> */}
+            <BasicFooter/>
         </div>
     );
 }

@@ -1,8 +1,6 @@
 import('./appbar.css');
 import * as React from 'react';
-import Stack from '@mui/material/Stack';
 import { useHistory } from 'react-router-dom';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -42,27 +40,26 @@ export default function Appbar() {
 
     return (
         <nav className="navbar">
-            {/* <AppBar position="static" backgroundColor="#DC7594"> */}
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: 'white' }} />
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        href="/"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'white',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        CONTAINER
-                    </Typography>
+                <Container maxWidth="xl">
+                    <Toolbar disableGutters>
+                        <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: 'white' }} />
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            component="a"
+                            href="/"
+                            sx={{
+                                mr: 2,
+                                display: { xs: 'none', md: 'flex' },
+                                fontFamily: 'monospace',
+                                fontWeight: 700,
+                                letterSpacing: '.3rem',
+                                color: 'white',
+                                textDecoration: 'none',
+                            }}
+                        >
+                            MFB
+                        </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton

@@ -27,9 +27,6 @@ const devConfig = {
                 product: 'product@http://localhost:3002/remoteEntry.js',
                 profile: 'profile@http://localhost:3004/remoteEntry.js',
             },
-            exposes: {
-                './Components': './src/share/components'
-            },
         }),
 
         new HtmlWebpackPlugin({

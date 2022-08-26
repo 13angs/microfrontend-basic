@@ -1,5 +1,6 @@
 import React from 'react';
 import {mountProfileSetting} from 'profile/Profile/Setting';
+import BasicFooter from '@mfb/common/footer/basicFooter';
 
 function ProfileSettingApp(){
     const appRef = React.useRef(null);
@@ -17,6 +18,7 @@ export default function ProfileSettingPage(){
     return (
         <div>
             <ProfileSettingApp/>
+            <BasicFooter/>
         </div>
     );
 }

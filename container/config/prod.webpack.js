@@ -21,6 +21,8 @@ const prodConfig = {
             name: 'container',
             remotes: {
                 checkout: `checkout@${domain}/remoteEntry.js`,
+                home: 'home@http://localhost:3001/remoteEntry.js',
+                product: 'product@http://localhost:3002/remoteEntry.js'
             },
             shared: packageJson.dependencies
         })

@@ -24,10 +24,7 @@ const devConfig = {
             exposes: {
                 './ProductApp': './src/bootstrap'
             },
-            shared: packageJson.dependencies,
-            remotes: {
-                container: 'container@http://localhost:3000/remoteEntry.js',
-            },
+            shared: packageJson.dependencies
         }),
 
         new HtmlWebpackPlugin({
