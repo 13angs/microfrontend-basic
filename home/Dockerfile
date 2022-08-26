@@ -5,13 +5,14 @@ LABEL MAINTAINER="bangz" \
     name="Romdon Uma" \
     version="0.0.1"
 
-ARG PRODUCT_HOST='http://localhost:3002'
+ARG HOME_HOST='http://localhost:3001'
 
 WORKDIR /app
 ENV NODE_ENV=development
 
 # setup all the remote hosts
-ENV PRODUCT_HOST=${PRODUCT_HOST}
+ENV HOME_HOST=${HOME_HOST}
+
 
 # change the apt-get bahavior to nointeractive
 ARG DEBIAN_FRONTEND=nointeractive
@@ -20,8 +21,8 @@ ARG DEBIAN_FRONTEND=nointeractive
 COPY ./package*.json /app/
 COPY ./lerna.json /app/
 
-# # COPY THE JSON FILE FOR product
-COPY ./product/package*.json /app/product/
+# # COPY THE JSON FILE FOR home
+COPY ./home/package*.json /app/home/
 
 # # COPY THE JSON FILE FOR COMMON PACKAGES
 COPY ./packages/common/package*.json /app/packages/common/
@@ -53,9 +54,9 @@ ENV TZ=Asia/Bangkok
 
 # copy all the file from builder
 # put it in the nginx dir
-COPY --from=builder /app/product/dist /usr/share/nginx/html
+COPY --from=builder /app/home/dist /usr/share/nginx/html
 
-COPY ./product/nginx/nginx.conf /etc/nginx/conf.d
+COPY ./home/nginx/nginx.conf /etc/nginx/conf.d
 
 WORKDIR /usr/share/nginx/html
 

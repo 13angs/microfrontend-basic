@@ -18,6 +18,8 @@ const ProfilePage = React.lazy(() => import('./pages/profile.page'))
 // const BackdropPage = React.lazy(() => import('./pages/backdrop.page'))
 
 function App() {
+  // const host = process.env.HOME_HOST;
+  // console.log(host);
   return (
     <React.Fragment>
       <BrowserRouter>

@@ -3,11 +3,14 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const commonConfig = require('./common.webpack');
 const packageJson = require('../package.json');
 
+// const product_host = process.env.PRODUCT_HOST || 'http://localhost:4002';
+const product_host = 'http://localhost:4002';
+
 const devConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
-    publicPath: 'http://localhost:3002/'
+    publicPath: `${product_host}/`
     // publicPath: '/'
   },
   plugins: [

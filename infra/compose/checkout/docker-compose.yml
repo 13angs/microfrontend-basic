@@ -4,10 +4,14 @@ services:
   mfb-checkout:
     image: 13angs/mfb-checkout:latest
     build: 
-      context: ../../../../checkout
-      dockerfile: Dockerfile
+      context: ../../../
+      dockerfile: ./checkout/Dockerfile
+      args:
+        - "CHECKOUT_HOST=${CHECKOUT_HOST}"
+    container_name: msb-checkout
     ports:
-      - "4000:80"
+      - target: 80
+        published: ${CHECKOUT_HOST_PORT}
     networks:
       - mfb-network
 

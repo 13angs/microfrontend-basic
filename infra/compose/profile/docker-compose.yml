@@ -1,0 +1,21 @@
+version: 'version'
+
+services:
+  mfb-profile:
+    image: 13angs/mfb-profile:latest
+    build: 
+      context: ../../../
+      dockerfile: ./profile/Dockerfile
+      args:
+        - "PROFILE_HOST=${PROFILE_HOST}"
+    container_name: msb-profile
+    ports:
+      - target: 80
+        published: ${PROFILE_HOST_PORT}
+    networks:
+      - mfb-network
+
+networks:
+  mfb-network:
+    name: mfb-network
+    external: true

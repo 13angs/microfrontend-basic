@@ -5,33 +5,32 @@ LABEL MAINTAINER="bangz" \
     name="Romdon Uma" \
     version="0.0.1"
 
-ARG PRODUCT_HOST='http://localhost:3002'
+ARG PROFILE_HOST='http://localhost:3004'
 
 WORKDIR /app
 ENV NODE_ENV=development
 
-# setup all the remote hosts
-ENV PRODUCT_HOST=${PRODUCT_HOST}
-
 # change the apt-get bahavior to nointeractive
 ARG DEBIAN_FRONTEND=nointeractive
+
+ENV PROFILE_HOST=${PROFILE_HOST}
 
 # COPY LERNA CONFIG/JSON
 COPY ./package*.json /app/
 COPY ./lerna.json /app/
 
-# # COPY THE JSON FILE FOR product
-COPY ./product/package*.json /app/product/
+# # COPY THE JSON FILE FOR profile
+COPY ./profile/package*.json /app/profile/
 
 # # COPY THE JSON FILE FOR COMMON PACKAGES
 COPY ./packages/common/package*.json /app/packages/common/
 
 # RUN npm install
 # SETUP AND INSTALL DEPENDENCIES
-RUN npm ci --ignore-scripts --production --no-optional
+RUN npm ci --ignore-scripts --profileion --no-optional
 
 # copy all the file to the image
-# create a production build
+# create a profileion build
 COPY ./ /app/
 
 RUN npx lerna bootstrap --hoist && npm run build
@@ -53,9 +52,9 @@ ENV TZ=Asia/Bangkok
 
 # copy all the file from builder
 # put it in the nginx dir
-COPY --from=builder /app/product/dist /usr/share/nginx/html
+COPY --from=builder /app/profile/dist /usr/share/nginx/html
 
-COPY ./product/nginx/nginx.conf /etc/nginx/conf.d
+COPY ./profile/nginx/nginx.conf /etc/nginx/conf.d
 
 WORKDIR /usr/share/nginx/html
 

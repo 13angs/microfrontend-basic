@@ -6,11 +6,15 @@ const packageJson = require('../package.json');
 const path = require('path');
 const webpack = require('webpack');
 
+// const profile_host = process.env.PROFILE_HOST || 'http://localhost:4004';
+const profile_host = 'http://localhost:4004';
+
 const devConfig = {
-    mode: 'development',
+    mode: 'production',
     output: {
-        publicPath: 'http://localhost:3004/',
-        path: path.resolve(__dirname, 'dist')
+        filename: '[name].[contenthash].js',
+        publicPath: `${profile_host}/`,
+        // path: path.resolve(__dirname, 'dist')
     },
     plugins: [
         new ModuleFederationPlugin({

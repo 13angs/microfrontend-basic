@@ -3,11 +3,14 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const commonConfig = require('./common.webpack');
 const packageJson = require('../package.json');
 
+// const dashboard_host = process.env.DASHBOARD_HOST || 'http://localhost:4005';
+const dashboard_host ='http://localhost:4005';
+
 const devConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
-    publicPath: 'http://localhost:3005/'
+    publicPath: `${dashboard_host}/`
     // publicPath: '/'
   },
   plugins: [
