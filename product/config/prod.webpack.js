@@ -7,7 +7,7 @@ const devConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
-    publicPath: 'http://localhost:4000/'
+    publicPath: 'http://localhost:3002/'
     // publicPath: '/'
   },
   plugins: [

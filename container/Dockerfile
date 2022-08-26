@@ -6,32 +6,32 @@ LABEL MAINTAINER="bangz" \
     version="0.0.1"
 
 WORKDIR /app
-ENV NODE_ENV=production
+ENV NODE_ENV=development
 
 # change the apt-get bahavior to nointeractive
 ARG DEBIAN_FRONTEND=nointeractive
 
 # COPY LERNA CONFIG/JSON
-# COPY ./package*.json /app/
-# COPY ./lerna.json /app/
+COPY ./package*.json /app/
+COPY ./lerna.json /app/
 
 # # COPY THE JSON FILE FOR CONTAINER
-# COPY ./container/package*.json /app/container/
+COPY ./container/package*.json /app/container/
 
 # # COPY THE JSON FILE FOR COMMON PACKAGES
-# COPY ./packages/common/package*.json /app/packages/common/
+COPY ./packages/common/package*.json /app/packages/common/
 
 # RUN npm install
 # SETUP AND INSTALL DEPENDENCIES
-# RUN npm ci --ignore-scripts --production --no-optional
-# RUN npx lerna bootstrap --hoist
+RUN npm ci --ignore-scripts --production --no-optional
 
 # copy all the file to the image
 # create a production build
 COPY ./ /app/
 
-RUN npm install
-RUN npm run build
+RUN npx lerna bootstrap --hoist && npm run build
+
+# RUN npm run build
 
 # Second Stage build
 FROM nginx:1.21.6-alpine
