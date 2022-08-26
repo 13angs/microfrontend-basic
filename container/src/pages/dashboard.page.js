@@ -1,6 +1,5 @@
 import React from 'react';
 import {mount} from 'dashboard/BashboardApp';
-import Button from '@mui/material/Button';
 
 function Dashboard(){
     const appRef = React.useRef(null);

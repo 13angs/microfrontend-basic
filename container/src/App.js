@@ -13,6 +13,7 @@ const HomePage = React.lazy(() => import('./pages/home.page'));
 const ProductPage = React.lazy(() => import('./pages/product.page'));
 const DashboardPage = React.lazy(() => import('./pages/dashboard.page'));
 const DashboardOrder = React.lazy(()=> import('./pages/dashboard/order.dashboard'));
+const DashboardProduct = React.lazy(()=> import('./pages/dashboard/product.dashboard'));
 
 // const BackdropPage = React.lazy(() => import('./pages/backdrop.page'))
 
@@ -30,6 +31,7 @@ function App() {
             <Route path={"/home"} component={HomePage} />
             <Route path={"/product"} component={ProductPage} />
             <Route exact path={"/dashboard/order"} component={DashboardOrder} />
+            <Route exact path={"/dashboard/product"} component={DashboardProduct} />
             <Route path={"/dashboard"} component={DashboardPage} />
           </Switch>
         </React.Suspense>

@@ -103,7 +103,7 @@ export default function Appbar() {
                                     <Typography textAlign="center">CHECKOUTS</Typography>
                                 </MenuItem>
                                 <MenuItem onClick={() => history.push('/dashboard')}>
-                                    <Typography textAlign="center">BASHBOARD</Typography>
+                                    <Typography textAlign="center">DASHBOARD</Typography>
                                 </MenuItem>
                             </Menu>
                         </Box>
@@ -144,6 +144,12 @@ export default function Appbar() {
                                 onClick={() => history.push('/checkouts')}
                             >
                                 CHECKOUTS
+                            </Button>
+                            <Button
+                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                onClick={() => history.push('/dashboard')}
+                            >
+                                DASHBOARD
                             </Button>
                         </Box>
                         <Box sx={{ flexGrow: 0 }}>
