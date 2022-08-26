@@ -8,8 +8,8 @@ import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Unstable_Grid2';
 import Button from '@mui/material/Button';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
+import BasicSnackbar from '@mfb/common/snackbar/snackbar';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -86,9 +86,7 @@ export default function BasicGrid() {
                     </Grid>
                 </Grid>
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end', padding: '12px' }}>
-                    <Button sx={{marginRight: '5px'}} variant="contained" color='success' startIcon={<CheckCircleIcon />}>
-                        ยืนยัน
-                    </Button>
+                    <BasicSnackbar title={"ยืนยัน"} />
                     <Button variant="contained" color='error' startIcon={<CancelIcon />}>
                         ยกเลิก
                     </Button>

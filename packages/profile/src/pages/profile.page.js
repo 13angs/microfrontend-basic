@@ -2,6 +2,7 @@ import React from 'react'
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Img from './image/images.png'
 
 function Profile() {
   return (
@@ -21,7 +22,7 @@ function Profile() {
         </Grid>
         <Box
           component="img"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgHpKZS7hEBgni3WBojTg8RKIiVPGlVpQatajhlg9Y3jskQxBlXfCvGAJ1OLT_nIaFrkc&usqp=CAU"
+          src={Img}
           alt="call to action"
           sx={{
             position: 'absolute',
