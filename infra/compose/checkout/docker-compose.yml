@@ -5,7 +5,7 @@ services:
     image: 13angs/mfb-checkout:latest
     build: 
       context: ../../../
-      dockerfile: ./checkout/Dockerfile
+      dockerfile: ./packages/checkout/Dockerfile
       args:
         - "CHECKOUT_HOST=${CHECKOUT_HOST}"
     container_name: msb-checkout

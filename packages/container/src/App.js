@@ -2,7 +2,7 @@
 import './App.css';
 import './index.css';
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 
@@ -22,7 +22,7 @@ function App() {
   // console.log(host);
   return (
     <React.Fragment>
-      <BrowserRouter>
+      <Router>
         <Appbars />
         <React.Suspense fallback={
           <Box sx={{ width: '100%', height: '100%' }}>
@@ -40,7 +40,7 @@ function App() {
             <Route path={"/"} component={HomePage} />
           </Switch>
         </React.Suspense>
-      </BrowserRouter>
+      </Router>
     </React.Fragment>
   );
 }
