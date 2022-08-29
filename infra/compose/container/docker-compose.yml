@@ -5,7 +5,7 @@ services:
     image: 13angs/mfb-container:latest
     build: 
       context: ../../../
-      dockerfile: ./container/Dockerfile
+      dockerfile: ./packages/container/Dockerfile
       args:
         - "HOME_HOST=${HOME_HOST}"
         - "PRODUCT_HOST=${PRODUCT_HOST}"

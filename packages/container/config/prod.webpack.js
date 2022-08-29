@@ -22,8 +22,8 @@ const prodConfig = {
         filename: '[name].[contenthash].js'
     },
 
-    experiments: {
-        topLevelAwait: true
+    optimization: {
+        splitChunks: false,
     },
 
     plugins: [

@@ -5,7 +5,7 @@ services:
     image: 13angs/mfb-product:latest
     build: 
       context: ../../../
-      dockerfile: ./product/Dockerfile
+      dockerfile: ./packages/product/Dockerfile
       args:
         - "PRODUCT_HOST=${PRODUCT_HOST}"
 

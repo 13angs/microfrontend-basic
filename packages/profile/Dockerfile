@@ -13,29 +13,30 @@ ENV NODE_ENV=development
 # change the apt-get bahavior to nointeractive
 ARG DEBIAN_FRONTEND=nointeractive
 
-ENV PROFILE_HOST=${PROFILE_HOST}
+# ENV PROFILE_HOST=${PROFILE_HOST}
 
 # COPY LERNA CONFIG/JSON
 COPY ./package*.json /app/
 COPY ./lerna.json /app/
 
-# # COPY THE JSON FILE FOR profile
-COPY ./profile/package*.json /app/profile/
+# # # COPY THE JSON FILE FOR CONTAINER
+COPY ./packages/profile/package*.json /app/packages/profile/
 
-# # COPY THE JSON FILE FOR COMMON PACKAGES
+# # # COPY THE JSON FILE FOR COMMON PACKAGES
 COPY ./packages/common/package*.json /app/packages/common/
 
 # RUN npm install
 # SETUP AND INSTALL DEPENDENCIES
-RUN npm ci --ignore-scripts --profileion --no-optional
+RUN npx lerna clean -y && \
+    npx lerna bootstrap --hoist
 
 # copy all the file to the image
-# create a profileion build
+# create a production build
 COPY ./ /app/
 
-RUN npx lerna bootstrap --hoist && npm run build
-
-# RUN npm run build
+# build the profile
+RUN cd /app/packages/profile && \
+    npm run build
 
 # Second Stage build
 FROM nginx:1.21.6-alpine
@@ -52,9 +53,9 @@ ENV TZ=Asia/Bangkok
 
 # copy all the file from builder
 # put it in the nginx dir
-COPY --from=builder /app/profile/dist /usr/share/nginx/html
+COPY --from=builder /app/packages/profile/dist /usr/share/nginx/html
 
-COPY ./profile/nginx/nginx.conf /etc/nginx/conf.d
+COPY ./packages/profile/nginx/nginx.conf /etc/nginx/conf.d
 
 WORKDIR /usr/share/nginx/html
 

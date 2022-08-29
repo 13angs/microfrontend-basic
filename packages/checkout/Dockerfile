@@ -11,7 +11,7 @@ WORKDIR /app
 ENV NODE_ENV=development
 
 # setup all the remote hosts
-ENV CHECKOUT_HOST=${CHECKOUT_HOST}
+# ENV CHECKOUT_HOST=${CHECKOUT_HOST}
 
 # change the apt-get bahavior to nointeractive
 ARG DEBIAN_FRONTEND=nointeractive
@@ -20,21 +20,24 @@ ARG DEBIAN_FRONTEND=nointeractive
 COPY ./package*.json /app/
 COPY ./lerna.json /app/
 
-# # COPY THE JSON FILE FOR checkout
-COPY ./checkout/package*.json /app/checkout/
+# # # COPY THE JSON FILE FOR CONTAINER
+COPY ./packages/checkout/package*.json /app/packages/checkout/
 
-# # COPY THE JSON FILE FOR COMMON PACKAGES
+# # # COPY THE JSON FILE FOR COMMON PACKAGES
 COPY ./packages/common/package*.json /app/packages/common/
 
 # RUN npm install
 # SETUP AND INSTALL DEPENDENCIES
-RUN npm ci --ignore-scripts --production --no-optional
+RUN npx lerna clean -y && \
+    npx lerna bootstrap --hoist
 
 # copy all the file to the image
 # create a production build
 COPY ./ /app/
 
-RUN npx lerna bootstrap --hoist && npm run build
+# build the checkout
+RUN cd /app/packages/checkout && \
+    npm run build
 
 # RUN npm run build
 
@@ -53,9 +56,9 @@ ENV TZ=Asia/Bangkok
 
 # copy all the file from builder
 # put it in the nginx dir
-COPY --from=builder /app/checkout/dist /usr/share/nginx/html
+COPY --from=builder /app/packages/checkout/dist /usr/share/nginx/html
 
-COPY ./checkout/nginx/nginx.conf /etc/nginx/conf.d
+COPY ./packages/checkout/nginx/nginx.conf /etc/nginx/conf.d
 
 WORKDIR /usr/share/nginx/html
 

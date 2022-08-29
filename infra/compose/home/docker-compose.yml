@@ -5,7 +5,7 @@ services:
     image: 13angs/mfb-home:latest
     build: 
       context: ../../../
-      dockerfile: ./home/Dockerfile
+      dockerfile: ./packages/home/Dockerfile
       args:
         - "HOME_HOST=${HOME_HOST}"
     container_name: msb-home

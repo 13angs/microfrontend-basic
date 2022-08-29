@@ -5,7 +5,7 @@ services:
     image: 13angs/mfb-dashboard:latest
     build: 
       context: ../../../
-      dockerfile: ./dashboard/Dockerfile
+      dockerfile: ./packages/dashboard/Dockerfile
       args:
         - "DASHBOARD_HOST=${DASHBOARD_HOST}"
     container_name: msb-dashboard

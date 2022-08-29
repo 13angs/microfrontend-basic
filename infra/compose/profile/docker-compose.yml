@@ -5,7 +5,7 @@ services:
     image: 13angs/mfb-profile:latest
     build: 
       context: ../../../
-      dockerfile: ./profile/Dockerfile
+      dockerfile: ./packages/profile/Dockerfile
       args:
         - "PROFILE_HOST=${PROFILE_HOST}"
     container_name: msb-profile
